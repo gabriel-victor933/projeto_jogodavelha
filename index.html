@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogo da Velha</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon"
@@ -14,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
-    <title>Jogo da velha</title>
+
+
 
 </head>
 
@@ -29,29 +30,31 @@
                     <div>O</div>
                 </div>
                 <div>
-                    <div>0</div>
+                    <div id="pontosx">0</div>
                     <div></div>
-                    <div>0</div>
+                    <div id="pontosy">0</div>
                 </div>
             </div>
 
             <div class="tabela">
-                <div id="11">X</div>
-                <div id="12">O</div>
-                <div id="13"></div>
-                <div id="21"></div>
-                <div id="22">X</div>
-                <div id="23"></div>
-                <div id="31">O</div>
-                <div id="32"></div>
-                <div id="33"></div>
+                <div id="00" onclick="jogada(this)"></div>
+                <div id="01" onclick="jogada(this)"></div>
+                <div id="02" onclick="jogada(this)"></div>
+                <div id="10" onclick="jogada(this)"></div>
+                <div id="11" onclick="jogada(this)"></div>
+                <div id="12" onclick="jogada(this)"></div>
+                <div id="20" onclick="jogada(this)"></div>
+                <div id="21" onclick="jogada(this)"></div>
+                <div id="22" onclick="jogada(this)"></div>
             </div>
 
             <div class="info">
-                Jogador 1 é sua vez!!
+                <p>"X" é sua vez!!</p>
             </div>
         </main>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
