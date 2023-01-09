@@ -1,0 +1,108 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../imagens/papel.jpg");
+    background-position: center center;
+    background-size: contain;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 400px;
+    height: 650px;
+
+}
+
+.placar {
+    width: 100%;
+    height: 125px;
+    background-color: rgb(178, 232, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 50px;
+    border: solid 2px rgb(131, 176, 190);
+    margin-bottom: 10px;
+    font-family: "Moon dance", "sans serif";
+    font-weight: 900;
+    font-size: 27px;
+
+}
+
+.placar>div,
+.placar h1 {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.placar h1 {
+    font-size: 35px;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+}
+
+
+
+
+.tabela {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "11 12 13"
+        "21 22 23"
+        "31 32 33";
+    gap: 3px;
+    border: solid -3px transparent;
+    box-sizing: unset;
+    padding: 0px;
+
+}
+
+.tabela:hover {
+    cursor: pointer;
+}
+
+.tabela>div {
+    background-color: rgb(235, 235, 235);
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Moon dance", "sans serif";
+    font-weight: 900;
+    font-size: 90px;
+
+}
+
+.tabela>div:hover {
+    background-color: rgb(255, 255, 255);
+
+}
+
+.info {
+    width: 100%;
+    height: 100px;
+    font-family: "Moon dance", "sans serif";
+    font-weight: 900;
+    font-size: 52px;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+
+}
