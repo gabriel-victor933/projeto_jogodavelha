@@ -1,4 +1,5 @@
-var tabela = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+let tabela = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+let tam = tabela.length;
 let Njogada = 0;
 let limitejogada = 9;
 let info = document.querySelector(".info P");
@@ -6,6 +7,7 @@ let placarx = document.querySelector("#pontosx");
 let placary = document.querySelector("#pontosy");
 let pontosx = 0;
 let pontosy = 0;
+
 
 
 
@@ -28,8 +30,8 @@ function jogada(posicao) {
     }
 
 
-    alterarTabela(x, y, Njogada);
-    Njogada++;
+    alterarTabela(posicao.id, Njogada);
+
 
     let vv = verificarVitoria();
     if (vv == 3) {
@@ -43,6 +45,13 @@ function jogada(posicao) {
             alert('Fim de jogo!!!\nclique OK para jogar novamente');
         }, 400);
 
+
+        setTimeout(function () {
+            limparJogo();
+        }, 400);
+
+
+
     } else if (vv == -3) {
 
         console.log("vitoria 0")
@@ -53,18 +62,30 @@ function jogada(posicao) {
             alert('Fim de jogo!!!\nclique OK para jogar novamente');
         }, 400);
 
-    } else if (Njogada == limitejogada) {
+
+
+        setTimeout(function () {
+            limparJogo();
+        }, 400);
+
+
+    } else if (Njogada == limitejogada - 1) {
         deuVelha();
         setTimeout(function () {
             alert('Fim de jogo!!!\nclique OK para jogar novamente');
         }, 400)
+
+        setTimeout(function () {
+            limparJogo();
+        }, 400);
     }
+
+    Njogada++;
 
 };
 
-function alterarTabela(x, y, Njogada) {
+function alterarTabela(num, Njogada) {
     //altera a tabela do jogo
-    let num = x + y;
 
     if (Njogada % 2 == 0) {
         //X
@@ -108,10 +129,10 @@ function jogadorVenceu() {
 
     if (Njogada % 2 == 0) {
         //X
-        info.innerHTML = '"O" é o vencedor!!'
+        info.innerHTML = '"X" é o vencedor!!';
     } else {
         //O
-        info.innerHTML = '"X" é o vencedor!!'
+        info.innerHTML = '"O" é o vencedor!!';
     }
 
 }
@@ -123,6 +144,29 @@ function deuVelha() {
 
 function limparJogo() {
 
+    tabela = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+
+    for (let i = 0; i < tam; i++) {
+
+        for (let j = 0; j < tam; j++) {
+            let num = i.toString() + j.toString();
+            console.log(num);
+            document.getElementById(num).innerHTML = ""
+
+
+        };
+
+    };
+
+    if (limitejogada == 9) {
+        Njogada = 1;
+        limitejogada = 10;
+        info.innerHTML = '"O" é sua vez!!';
+    } else {
+        Njogada = 0;
+        limitejogada = 9;
+        info.innerHTML = '"X" é sua vez!!';
+    }
 
 }
 
