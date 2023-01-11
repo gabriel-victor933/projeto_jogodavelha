@@ -18,6 +18,8 @@ body {
 main {
     width: 400px;
     height: 650px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 
 }
 
@@ -33,7 +35,7 @@ main {
     margin-bottom: 10px;
     font-family: "Moon dance", "sans serif";
     font-weight: 900;
-    font-size: 27px;
+    font-size: 30px;
 
 }
 
@@ -50,8 +52,6 @@ main {
     text-decoration-style: dotted;
     text-decoration-thickness: 2px;
 }
-
-
 
 
 .tabela {
@@ -104,5 +104,116 @@ main {
     text-decoration: underline;
     text-decoration-style: dotted;
     text-decoration-thickness: 2px;
+
+}
+
+
+@keyframes animacao1 {
+
+    0% {}
+
+    50% {}
+
+    100% {
+        opacity: 0;
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+
+}
+
+@keyframes animacao2 {
+
+    0% {
+        transform: rotate3d(0, 1, 0, 90deg);
+        opacity: 0.2;
+    }
+
+    50% {}
+
+    100% {
+        transform: rotate3d(0, 1, 0, 0deg);
+        opacity: 0.9;
+    }
+
+
+}
+
+
+.inicial {
+    font-family: "Moon dance", "sans serif";
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+
+}
+
+.inicial h3 {
+    font-weight: 900;
+    font-size: 63px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+    margin-bottom: 15px;
+}
+
+.formu {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(235, 235, 235);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
+label {
+
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 7px;
+
+
+}
+
+.formu input {
+    border: none;
+    width: 70%;
+    height: 35px;
+    border-radius: 7px;
+    opacity: 0.7;
+}
+
+.formu input:hover {
+    background-color: white;
+    opacity: 1;
+}
+
+.formu input:last-child {
+    background-color: rgb(178, 232, 250);
+    height: 40px;
+    font-family: "Moon dance", "sans serif";
+    font-size: 25px;
+    font-weight: 700;
+    border: solid 2px rgb(131, 176, 190);
+    text-align: center center;
+    margin-top: 15px;
+    opacity: 1;
+
+}
+
+
+
+.anim {
+    animation-name: animacao1;
+    animation-duration: 1.5s;
+}
+
+.anim2 {
+    transform: rotate3d(0, 1, 0, 0deg);
+    animation-name: animacao2;
+    animation-duration: 1.2s;
 
 }

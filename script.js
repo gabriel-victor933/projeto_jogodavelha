@@ -8,6 +8,10 @@ let placary = document.querySelector("#pontosy");
 let pontosx = 0;
 let pontosy = 0;
 
+let jogador1 = "Jogador 1";
+let jogador2 = "Jogador 2";
+
+info.innerHTML = jogador1 + " é sua vez!!";
 
 
 
@@ -90,11 +94,11 @@ function alterarTabela(num, Njogada) {
     if (Njogada % 2 == 0) {
         //X
         document.getElementById(num).innerHTML = "X";
-        info.innerHTML = '"O" é sua vez!!'
+        info.innerHTML = jogador2 + ' é sua vez!!';
     } else {
         //O
         document.getElementById(num).innerHTML = "O";
-        info.innerHTML = '"X" é sua vez!!'
+        info.innerHTML = jogador1 + " é sua vez!!";
     }
 }
 
@@ -129,10 +133,10 @@ function jogadorVenceu() {
 
     if (Njogada % 2 == 0) {
         //X
-        info.innerHTML = '"X" é o vencedor!!';
+        info.innerHTML = jogador1 + ' é o vencedor!!';
     } else {
         //O
-        info.innerHTML = '"O" é o vencedor!!';
+        info.innerHTML = jogador2 + ' é o vencedor!!';
     }
 
 }
@@ -161,12 +165,35 @@ function limparJogo() {
     if (limitejogada == 9) {
         Njogada = 1;
         limitejogada = 10;
-        info.innerHTML = '"O" é sua vez!!';
+        info.innerHTML = jogador2 + ' é sua vez!!';
     } else {
         Njogada = 0;
         limitejogada = 9;
-        info.innerHTML = '"X" é sua vez!!';
+        info.innerHTML = jogador1 + " é sua vez!!";
     }
 
 }
 
+
+function mudarPagina() {
+    jogador1 = document.getElementById("Njogador1").value;
+    jogador2 = document.getElementById("Njogador2").value;
+
+
+    let menu = document.querySelector(".inicial");
+
+    console.log(menu)
+
+    menu.classList.add("anim");
+
+    setTimeout(function () {
+        menu.style.display = "none";
+        document.querySelector("main").style.display = "block"
+        document.querySelector("main").classList.add("anim2")
+    }, 1300);
+
+    //alterar placar e primeira info
+    info.innerHTML = `${jogador1} é a sua vez!!`;
+    document.querySelector("#nomej1").innerHTML = jogador1;
+    document.querySelector("#nomej2").innerHTML = jogador2;
+}

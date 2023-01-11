@@ -21,13 +21,13 @@
 
 <body>
     <div class="container">
-        <main>
+        <main style="display:none">
             <div class="placar">
                 <h1>PLACAR</h1>
                 <div>
-                    <div>X</div>
+                    <div id="nomej1">X</div>
                     <div>-</div>
-                    <div>O</div>
+                    <div id="nomej2">O</div>
                 </div>
                 <div>
                     <div id="pontosx">0</div>
@@ -49,12 +49,35 @@
             </div>
 
             <div class="info">
-                <p>"X" é sua vez!!</p>
+                <p></p>
             </div>
         </main>
+
+
+        <!-- menu inicial do jogo-->
+
+        <div class="inicial">
+            <h3>Jogo da Velha!!!</h3>
+            <div class="formu">
+                <label for="Njogador1">Insira o nome do Jogador 1:</label>
+                <input type="text" value="Jogador 1" max=20 id="Njogador1" />
+                <br>
+                <br>
+                <label for="Njogador2">Insira o nome do Jogador 2:</label>
+                <input type=" text" value="Jogador 2" max="20" id="Njogador2" />
+                <br>
+                <br>
+                <input type="submit" value="COMEÇAR!!!" class="enviar" onclick="mudarPagina();" />
+            </div>
+        </div>
+
+
+
+
+
     </div>
 
-    <script src="./script.js"></script>
+    <script src=" ./script.js"></script>
 </body>
 
 </html>
